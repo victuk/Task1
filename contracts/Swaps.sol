@@ -50,7 +50,8 @@ contract UseSwap {
             amountOutMin,
             path,
             to,
-            
+            deadline
+        );
 
         swapCount2 += 1;
     }
