@@ -8,7 +8,7 @@ contract UseSwap {
     address public uniswapRouter;
     address public owner;
     uint public swapCount;
-    uint public swapCoun2;
+    uint public swapCount2;
 
     constructor(address _uniswapRouter) {
         uniswapRouter = _uniswapRouter;
@@ -41,8 +41,8 @@ contract UseSwap {
 
 
     function swapExactETHForTokens(
-        uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline
-    ) external {
+        uint amountOutMin, address[] calldata path, address to, uint deadline
+    ) external payable {
 
         IUniswapV2Router(uniswapRouter).swapExactETHForTokens{
             value: msg.value
